@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}STOCKs in M{% endblock %}
+{% block content %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Portfolio Details</li>
+        </ol>
+        <h2>Portfolio Details</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper-container">
+              <div class="swiper-wrapper align-items-center">
+              <p>
+              <table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Key</th>
+      <th scope="col">Value</th>
+      <th scope="col">Key</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">AvgTotalVolume</th>
+      <td>{{api.avgTotalVolume}}</td>
+      <th>calculationPrice</th>
+      <td>{{api.calculationPrice}}</td>
+    </tr>
+    <tr>
+      <th scope="row">PreviousClose</th>
+      <td>{{api.previousClose}}</td>
+      <th>PreviousVolume</th>
+      <td>{{api.previousVolume}}</td>
+    </tr>
+    <tr>
+      <th scope="row">week52High</th>
+      <td >{{api.week52High}}</td>
+      <th>Week52Low</th>
+      <td>{{api.week52Low}}</td>
+    </tr>
+  </tbody>
+</table>
+              
+              </p>
+
+                
+
+                
+
+                
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Company Name: {{api.companyName}} </h3>
+              <ul>
+                <li><strong>LatestTime</strong>{{api.latestTime}}</li>
+                <br>
+               
+                
+                 <p>Note:This is a StockMarket app for individual learning for webdevelopment, 
+              it's not lead to use for any investment. <hr>
+              </p>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+            
+              <ul>
+              <p>
+              {{ api  }}
+            </p>
+            <br><hr>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+
+ {% endblock%}
