@@ -1,77 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}STOCKs in M{% endblock %}
+{% block title %}Stock_temp{% endblock %}
 {% block content %}
 
-  <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
 
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Portfolio Details</li>
-        </ol>
-        <h2>Portfolio Details</h2>
 
-      </div>
-    </section><!-- End Breadcrumbs -->
+<h1>This is Home</h1>
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
 
-        <div class="row gy-4">
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper-container">
-              <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src="static/img/portfolio/portfolio-1.jpg" alt="">
-                </div>
 
-                <div class="swiper-slide">
-                  <img src="static/img/portfolio/portfolio-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="static/img/portfolio/portfolio-3.jpg" alt="">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Welcome to StockMarket Blog</h3>
-              <ul>
-                <li><strong>Category</strong>: Website</li>
-                <li><strong>Project type</strong>: Desktop WebApp</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project Url</strong>: <a href="#">www.example.com</a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description">
-              <h2>This is a StockMarket Blog for the beginner.</h2>
-              <ul>
-              <p>
-              {{ api  }}
- </p>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Details Section -->
-
-  </main><!-- End #main -->
-  <button type="button" class="btn btn-primary btn-lg px-4 gap-3" >Primary button</button>
 
 
  {% endblock%}

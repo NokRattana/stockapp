@@ -55,43 +55,50 @@
   </section>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
+  
+<!-- ======= Navbar ======= -->
 
-      <h1 class="logo"><a href="index.html">StockMarket For beginner</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html" class="logo"><img src="static/img/logo.png" alt="" class="img-fluid"></a>
+     
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto " href="{% url 'stocks_temp' %}">Home</a></li>
-          <li><a class="nav-link scrollto" href="">About</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'blog_temp' %}">Blog</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
 
+
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'stocks_temp'%}">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'blog_temp'%}">Today Prices</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'add_mystock'%}">My Stock</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+
+      <form action="{% url 'blog_temp'%}"class="form-inline d-flex" method="POST">
+      {% csrf_token %}
+      <input class="form-control me-2" type="search" placeholder="Type Ticker Symbol here.." aria-label="Search" name="ticker">
+        <button class="btn btn-outline-danger" type="submit">Stock Quote</button>
+      </form>
     </div>
-  </header><!-- End Header -->
+  </div>
+</nav>
+</div>
+</div><br/>
+</section><!-- End Navbar -->
+
+
+
+
+
   {% block content %}
 
 
