@@ -20,52 +20,417 @@
 
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
+
+
+<!-- ======= Navbar ======= -->
+
+      <div class="container">
+
+
+
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'blog_temp'%}">Stock Portfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'stocks_temp'%}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+
+      <form action="{% url 'blog_temp'%}"class="form-inline d-flex" method="POST">
+      {% csrf_token %}
+
+
+        <input class="form-control me-2" type="search" placeholder="Type Ticker Symbol here.." aria-label="Search" name="ticker">
+        <button class="btn btn-outline-danger" type="submit">Stock Quote</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
+
+
+
+      </div>
+    </section><!-- End Navbar -->
+
+            <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
         <div class="row gy-4">
 
-          <div class="col-lg-8">
+          <div class="col-lg-4">
+             <div class="portfolio-info border-top">
             <div class="portfolio-details-slider swiper-container">
-              <div class="swiper-wrapper align-items-center">
-              <p>
-              <table class="table">
-  <thead class="table-dark">
+
+
+
+
+
+
+            <ul>
+                <li><h3>Company Name: {{ api.companyName}}  </h3></li>
+
+                <li><strong>LatestTime: {{ api.latestTime}}  </strong></li>
+                <li><strong>PrimaryExchange: {{ api.primaryExchange}}   </strong></li>
+
+
+<table class="table">
+  <thead class="table-danger">
     <tr>
+      <th scope="col">Id</th>
       <th scope="col">Key</th>
       <th scope="col">Value</th>
-      <th scope="col">Key</th>
-      <th scope="col">Value</th>
+
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">AvgTotalVolume</th>
+      <th scope="row">1</th>
+      <td>avgTotalVolume</td>
       <td>{{api.avgTotalVolume}}</td>
-      <th>calculationPrice</th>
+
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>calculationPrice</td>
       <td>{{api.calculationPrice}}</td>
+
     </tr>
     <tr>
-      <th scope="row">PreviousClose</th>
-      <td>{{api.previousClose}}</td>
-      <th>PreviousVolume</th>
-      <td>{{api.previousVolume}}</td>
+      <th scope="row">3</th>
+      <td>change</td>
+      <td>{{api.change}}</td>
+
+    </tr>
+        <tr>
+      <th scope="row">4</th>
+      <td>changePercent</td>
+      <td>{{api.changePercent}}</td>
+
     </tr>
     <tr>
-      <th scope="row">week52High</th>
-      <td >{{api.week52High}}</td>
-      <th>Week52Low</th>
-      <td>{{api.week52Low}}</td>
+      <th scope="row">5</th>
+      <td>close</td>
+      <td>{{api.close}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>closeSource</td>
+      <td>{{api.closeSource}}</td>
+
+    </tr>
+
+    <tr>
+      <th scope="row">7</th>
+      <td>closeTime</td>
+      <td>{{api.closeTime}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>companyName</td>
+      <td>{{api.companyName}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td>currency</td>
+      <td>{{api.currency}}</td>
+
+    </tr>
+        <tr>
+      <th scope="row">10</th>
+      <td>delayedPrice</td>
+      <td>{{api.delayedPrice}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">11</th>
+      <td>delayedPriceTime</td>
+      <td>{{api.delayedPriceTime}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">12</th>
+      <td>extendedChange</td>
+      <td>{{api.extendedChange}}</td>
+
+    </tr>
+
+    <tr>
+      <th scope="row">13</th>
+      <td>extendedChangePercent</td>
+      <td>{{api.extendedChangePercent}}</td>
+
+    </tr>
+        <tr>
+      <th scope="row">14</th>
+      <td>extendedPrice</td>
+      <td>{{api.extendedPrice}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">15</th>
+      <td>extendedPriceTime</td>
+      <td>{{api.extendedPriceTime}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">16</th>
+      <td>high</td>
+      <td>{{api.high}}</td>
+
+    </tr>
+
+    <tr>
+      <th scope="row">17</th>
+      <td>highSource</td>
+      <td>{{api.highSource}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">18</th>
+      <td>highTime</td>
+      <td>{{api.highTime}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">19</th>
+      <td>iexAskPrice</td>
+      <td>{{api.iexAskPrice}}</td>
+
+    </tr>
+        <tr>
+      <th scope="row">20</th>
+      <td>iexAskSize</td>
+      <td>{{api.iexAskSize}}</td>
+
+    </tr>
+
+  </tbody>
+</table>
+            </ul>
+  <!-- ======= End A ======= -->
+
+            <ul>
+                <li><h3>Company Name: {{ api.companyName}}  </h3></li>
+
+                <li><strong>LatestTime: {{ api.latestTime}}  </strong></li>
+                <li><strong>PrimaryExchange: {{ api.primaryExchange}}   </strong></li>
+                <li><strong>Currency: {{ api.currency}}   </strong></li>
+                <li><strong>symbol: {{ api.symbol}}   </strong></li>
+
+
+
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+                    <div class="col-lg-4">
+            <div class="portfolio-info border-top">
+            <div class="portfolio-details-slider swiper-container">
+            <ul>
+                <li><h3>Company Name: {{ api.companyName}}   </h3></li>
+
+                <li><strong>LatestTime: {{ api.latestTime}}  </strong></li>
+                <li><strong>Currency: {{ api.currency}}   </strong></li>
+
+
+    <table class="table">
+        <thead class="table-danger">
+            <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Key</th>
+            <th scope="col">Value</th>
+
+        </tr>
+        </thead>
+  <tbody>
+    <tr>
+      <th scope="row">21</th>
+      <td>iexBidPrice</td>
+      <td>{{api.iexBidPrice}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">22</th>
+      <td>iexBidSize</td>
+      <td>{{api.iexBidSize}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">23</th>
+      <td>iexClose</td>
+      <td>{{api.iexClose}}</td>
+
+    </tr>
+      <tr>
+      <th scope="row">24</th>
+      <td>iexCloseTime</td>
+      <td>{{api.iexCloseTime}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">25</th>
+      <td>iexLastUpdated</td>
+      <td>{{api.iexLastUpdated}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">26</th>
+      <td>iexMarketPercent</td>
+      <td>{{api.iexMarketPercent}}</td>
+
+    </tr>
+        <tr>
+      <th scope="row">27</th>
+      <td>iexOpen</td>
+      <td>{{api.iexOpen}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">28</th>
+      <td>iexOpenTime</td>
+      <td>{{api.iexOpenTime}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">29</th>
+      <td>iexRealtimePrice</td>
+      <td>{{api.iexRealtimePrice}}</td>
+
+    </tr>
+      <tr>
+      <th scope="row">30</th>
+      <td>iexRealtimeSize</td>
+      <td>{{api.iexRealtimeSize}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">31</th>
+      <td>iexVolume</td>
+      <td>{{api.iexVolume}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">32</th>
+      <td>lastTradeTime</td>
+      <td>{{api.lastTradeTime}}</td>
+
+    </tr>
+
+    <tr>
+      <th scope="row">33</th>
+      <td>latestPrice</td>
+      <td>{{api.latestPrice}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">34</th>
+      <td>latestSource</td>
+      <td>{{api.latestSource}}</td>
+
+    </tr>
+        <tr>
+      <th scope="row">35</th>
+      <td>latestTime</td>
+      <td>{{api.latestTime}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">36</th>
+      <td>latestUpdate</td>
+      <td>{{api.latestUpdate}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">37</th>
+      <td>latestVolume</td>
+      <td>{{api.latestVolume}}</td>
+
+    </tr>
+      <tr>
+      <th scope="row">38</th>
+      <td>low</td>
+      <td>{{api.low}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">39</th>
+      <td>lowSource</td>
+      <td>{{api.lowSource}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">40</th>
+      <td>lowTime</td>
+      <td>{{api.lowTime}}</td>
+
     </tr>
   </tbody>
 </table>
-              
-              </p>
+            </ul>
+ <!-- ======= End B ======= -->
 
-                
 
-                
 
-                
+{% if ticker %}
+    {{ ticker }}
+{% endif %}
+
+
+
+
+
+
+
+
+
 
               </div>
               <div class="swiper-pagination"></div>
@@ -73,32 +438,136 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Company Name: {{api.companyName}} </h3>
+            <div class="portfolio-info border-top">
+
+
               <ul>
-                <li><strong>LatestTime</strong>{{api.latestTime}}</li>
-                <br>
-               
-                
-                 <p>Note:This is a StockMarket app for individual learning for webdevelopment, 
-              it's not lead to use for any investment. <hr>
-              </p>
-              </ul>
+                <li><h3>Company Name: {{ api.companyName}}   </h3></li>
+
+            <li><strong>LatestTime: {{ api.latestTime}}  </strong></li>
+                <li><strong>symbol: {{ api.symbol}}   </strong></li>
+
+
+
+
+
+                        <table class="table">
+        <thead class="table-danger">
+            <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Key</th>
+            <th scope="col">Value</th>
+
+        </tr>
+        </thead>
+  <tbody>
+    <tr>
+      <th scope="row">41</th>
+      <td>marketCap</td>
+      <td>{{api.marketCap}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">42</th>
+      <td>oddLotDelayedPrice</td>
+      <td>{{api.oddLotDelayedPrice}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">43</th>
+      <td>oddLotDelayedPriceTime</td>
+      <td>{{api.oddLotDelayedPriceTime}}</td>
+
+    </tr>
+        <tr>
+      <th scope="row">44</th>
+      <td>open</td>
+      <td>{{api.open}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">45</th>
+      <td>openTime</td>
+      <td>{{api.openTime}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">46</th>
+      <td>openSource</td>
+      <td>{{api.openSource}}</td>
+
+    </tr>
+       <tr>
+      <th scope="row">47</th>
+      <td>peRatio</td>
+      <td>{{api.peRatio}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">48</th>
+      <td>previousClose</td>
+      <td>{{api.previousClose}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">49</th>
+      <td>previousVolume</td>
+      <td>{{api.previousVolume}}</td>
+
+    </tr>
+        <tr>
+      <th scope="row">50</th>
+      <td>primaryExchange</td>
+      <td>{{api.primaryExchange}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">51</th>
+      <td>symbol</td>
+      <td>{{api.symbol}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">52</th>
+      <td>volume</td>
+      <td>{{api.volume}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">53</th>
+      <td>week52High</td>
+      <td>{{api.week52High}}</td>
+
+    </tr>
+    <tr>
+      <th scope="row">54</th>
+      <td>week52Low</td>
+      <td>{{api.week52Low}}</td>
+    </tr>
+    <tr>
+      <th scope="row">54</th>
+      <td>ytdChange</td>
+      <td>{{api.ytdChange}}</td>
+    </tr>
+  </tbody>
+</table>
+                </ul>
+ <!-- ======= End C ======= -->
             </div>
             <div class="portfolio-description">
-            
-              <ul>
+              <h2></h2>
               <p>
-              {{ api  }}
-            </p>
-            <br><hr>
-              </ul>
+
+
+              </p>
             </div>
           </div>
 
-        </div>
+        </div><hr>
 
       </div>
+    </section><!-- End Portfolio Details Section -->
+      
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
